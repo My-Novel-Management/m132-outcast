@@ -30,20 +30,20 @@ from config import ASSET
 ################################################################
 
 # Constant
-TITLE = "作品タイトル"
-MAJOR, MINOR, MICRO = 0, 0, 1
-COPY = "コピィ"
-ONELINE = "一行説明"
-OUTLINE = "あらすじ"
-THEME = "テーマ"
-GENRE = "ジャンル"
-TARGET = "ターゲット（年代）"
+TITLE = "ハミダシモノ、はじめました"
+MAJOR, MINOR, MICRO = 0, 1, 0
+COPY = "はみだすことは、悪だった"
+ONELINE = "約8000字の青春短編。クラスで「ハミダシモノ」に立候補した少女は翌日から無視される"
+OUTLINE = "クラスでなんとなく空気に馴染めずにいた少女は、中心的存在が募集した「ハミダシモノ」に立候補する。大切な人を守る為、翌日から孤独な戦いが始まった"
+THEME = "はみ出すのはそれほど恐ろしいことなのか？"
+GENRE = "青春／ヒューマンドラマ"
+TARGET = "10-20years"
 SIZE = "規定サイズ"
 CONTEST_INFO = "コンテスト情報"
 CAUTION = "注意事項"
 NOTE = "備考"
 SITES = ["エブリスタ", "小説家になろう", "ノベルアッププラス", "カクヨム"]
-TAGS = ["ドラマ",]
+TAGS = ["ドラマ", "青春", "学生生活", "いじめ"]
 RELEASED = (1, 1, 2020)
 
 
@@ -58,6 +58,42 @@ def ch_main(w: World):
             )
 
 
+# Notes
+def write_note(w: World):
+    return w.writer_note("覚書",
+            )
+
+def plot_note(w: World):
+    return w.writer_note("プロットメモ",
+            )
+
+def chara_note(w: World):
+    return w.writer_note("人物メモ",
+            )
+
+def stage_note(w: World):
+    return w.writer_note("場所メモ",
+            )
+
+def theme_note(w: World):
+    return w.writer_note("テーマメモ",
+            )
+
+def motif_note(w: World):
+    return w.writer_note("モチーフ",
+            "孤立", "はみだす",
+            "孤独",
+            "学園生活", "学生",
+            "集団",
+            "個人",
+            "ライングループ",
+            "部活",
+            "昼休み", "お弁当",
+            "休み時間",
+            "体育の時間",
+            )
+
+# Main
 def main(): # pragma: no cover
     w = World.create_world(f"{TITLE}")
     w.config.set_version(MAJOR, MINOR, MICRO)
@@ -79,6 +115,12 @@ def main(): # pragma: no cover
     w.config.set_taginfos(*TAGS)
     w.config.set_released(*RELEASED)
     return w.run(
+            write_note(w),
+            plot_note(w),
+            chara_note(w),
+            stage_note(w),
+            theme_note(w),
+            motif_note(w),
             ch_main(w),
             )
 
