@@ -48,11 +48,6 @@ RELEASED = (1, 1, 2020)
 
 
 # Episodes
-def ep_xxx(w: World):
-    return w.episode('episode_title',
-            outline="description")
-
-
 def ch_main(w: World):
     return w.chapter('main',
             )
