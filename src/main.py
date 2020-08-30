@@ -31,7 +31,7 @@ from config import ASSET
 
 # Constant
 TITLE = "ハミダシモノ、はじめました"
-MAJOR, MINOR, MICRO = 0, 1, 0
+MAJOR, MINOR, MICRO = 0, 2, 0
 COPY = "はみだすことは、悪だった"
 ONELINE = "約8000字の青春短編。クラスで「ハミダシモノ」に立候補した少女は翌日から無視される"
 OUTLINE = "クラスでなんとなく空気に馴染めずにいた少女は、中心的存在が募集した「ハミダシモノ」に立候補する。大切な人を守る為、翌日から孤独な戦いが始まった"
