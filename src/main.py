@@ -19,37 +19,49 @@ from config import ASSET
 #
 #   1. Initialize
 #   2. Story memo
-#   3. Structure    - 1/8
+#   3. Structure    - 1/8: 1K
 #   4. Spec
-#   5. Plot         - 1/4
+#   5. Plot         - 1/4: 2K
 #   6. Scenes
-#   7. Conte        - 1/2
+#   7. Conte        - 1/2: 4K
 #   8. Layout
-#   9. Draft        - 1/1
+#   9. Draft        - 1/1: 8K
 #
 ################################################################
 
 # Constant
 TITLE = "ハミダシモノ、はじめました"
-MAJOR, MINOR, MICRO = 0, 2, 0
+MAJOR, MINOR, MICRO = 0, 3, 0
 COPY = "はみだすことは、悪だった"
 ONELINE = "約8000字の青春短編。クラスで「ハミダシモノ」に立候補した少女は翌日から無視される"
 OUTLINE = "クラスでなんとなく空気に馴染めずにいた少女は、中心的存在が募集した「ハミダシモノ」に立候補する。大切な人を守る為、翌日から孤独な戦いが始まった"
 THEME = "はみ出すのはそれほど恐ろしいことなのか？"
 GENRE = "青春／ヒューマンドラマ"
 TARGET = "10-20years"
-SIZE = "規定サイズ"
-CONTEST_INFO = "コンテスト情報"
-CAUTION = "注意事項"
-NOTE = "備考"
+SIZE = "8K"
+CONTEST_INFO = "妄想コンテスト「○○、はじめました」"
+CAUTION = ""
+NOTE = ""
 SITES = ["エブリスタ", "小説家になろう", "ノベルアッププラス", "カクヨム"]
 TAGS = ["ドラマ", "青春", "学生生活", "いじめ"]
-RELEASED = (1, 1, 2020)
+RELEASED = (9, 10, 2020)
 
 
 # Episodes
 def ch_main(w: World):
     return w.chapter('main',
+            w.plot_setup("$akoは高校生"),
+            w.plot_setup("$akoは$noriと小学生からの親友"),
+            w.plot_setup("$noriはクラスでハミダシモノとして扱われていた"),
+            w.plot_setup("クラスはみんな同じであることを望まれる雰囲気があった"),
+            w.plot_turnpoint("ハミダシモノに$akoは立候補する"),
+            w.plot_develop("クラスで空気として扱われ、孤立する$ako"),
+            w.plot_develop("孤立しても平気で生活を続ける$ako"),
+            w.plot_develop("$noriも一緒にハミダシモノになる"),
+            w.plot_turnpoint("次々とハミダシモノになる同級生たち"),
+            w.plot_resolve("$misoraがハミダシモノに入れて下さいと懇願する"),
+            w.plot_resolve("全員がハミダシモノになった"),
+            w.plot_resolve("$akoは責任を取り、学校を辞めた"),
             )
 
 
