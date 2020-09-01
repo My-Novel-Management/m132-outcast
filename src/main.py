@@ -51,9 +51,15 @@ RELEASED = (9, 10, 2020)
 def ch_main(w: World):
     return w.chapter('main',
             w.plot_setup("$akoは高校生"),
+            w.plot_setup("高校は進学校で全生徒に支給のタブレットと$idが与えられる"),
+            w.plot_setup("テスト校で$AIによる成績評価を取り入れていた"),
             w.plot_setup("$akoは$noriと小学生からの親友"),
             w.plot_setup("$noriはクラスでハミダシモノとして扱われていた"),
             w.plot_setup("クラスはみんな同じであることを望まれる雰囲気があった"),
+            w.plot_setup("クラスは$misoraにより仕切られていた"),
+            w.plot_turnpoint("$noriが不登校になった"),
+            w.plot_develop("クラスでいじめ撲滅の話し合いが持たれる"),
+            w.plot_develop("ストレスのはけ口が必要と輪番制の「ハミダシモノ」を決めることになる"),
             w.plot_turnpoint("ハミダシモノに$akoは立候補する"),
             w.plot_develop("クラスで空気として扱われ、孤立する$ako"),
             w.plot_develop("孤立しても平気で生活を続ける$ako"),
@@ -62,6 +68,7 @@ def ch_main(w: World):
             w.plot_resolve("$misoraがハミダシモノに入れて下さいと懇願する"),
             w.plot_resolve("全員がハミダシモノになった"),
             w.plot_resolve("$akoは責任を取り、学校を辞めた"),
+            w.plot_resolve("$AIの評価では$akoだけが合格と出ていた"),
             )
 
 
@@ -122,6 +129,7 @@ def theme_note(w: World):
             "これを放棄することこそが、今回のテーマである",
             "そこから脱却することで、ハミダシモノとなる",
             "そういう反逆の物語",
+            "人間だけでなく、AIによる評価を導入して、そこに対する反逆の物語も描く",
             )
 
 def motif_note(w: World):
@@ -136,6 +144,7 @@ def motif_note(w: World):
             "昼休み", "お弁当",
             "休み時間",
             "体育の時間",
+            "AIによる評価",
             )
 
 # Main
