@@ -14,6 +14,8 @@ ASSET = {
             ),
         "STAGES": (
             # (tag / name / parent / (geometry) / info)
+            ("HighSchool", "高校", "Tokyo"),
+            ("Classroom", "教室", "HighSchool"),
             ),
         "DAYS": (
             # (tag / name / month / day / year)
