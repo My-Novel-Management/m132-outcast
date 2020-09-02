@@ -52,26 +52,27 @@ def ep_highschool(w: World):
     return w.episode("先進的学校",
             w.plot_setup("$akoは高校生"),
             w.plot_setup("高校はテストケースの進学校で全寮制、全生徒にタブレットが支給される"),
-            w.plot_setup("生徒の評価は$AIにより行われ、先生たちはそれに口出しできない"),
+            w.plot_setup("生徒の評価は$AIにより行われ、誰もそれに口出しできないでいた"),
             w.plot_setup("$akoは$noriと小学生からの親友"),
             w.plot_setup("作業が遅く、いつも$AIにより低評価だった$noriはクラスでも見下されていた"),
             w.plot_setup("成績上位者の一人$misoraはどうやれば$AI評価が高くなるかを理解しており、",
-                "それによってクラスを仕切っていた"),
-            w.plot_setup("しかし$akoだけは彼女に従わなかった"),
-            w.plot_turnpoint("そして$noriが不登校になった"),
+                "それによってクラスで優位を保っていた"),
+            w.plot_setup("$noriが不登校になる"),
+            w.plot_setup("いじめがあったとタレコミがある"),
+            w.plot_turnpoint("$AIは解決策として輪番制の「ハミダシモノ」を作ることを提案する"),
             )
 
 def ep_hamidashimono(w: World):
     return w.episode("ハミダシモノ",
-            w.plot_develop("クラスでいじめがあるのでは？とタレコミがある"),
-            w.plot_develop("問題への対処も$AIによってなされていた"),
-            w.plot_develop("$AIによりはじきだされたいじめ対策はクラスに輪番制のハミダシモノを作るということだった"),
             w.plot_develop("しかし誰もハミダシモノになりたがらない"),
-            w.plot_turnpoint("ハミダシモノに$akoは立候補する"),
-            w.plot_develop("クラスで空気として扱われ、孤立する$ako"),
+            w.plot_develop("$akoはハミダシモノに立候補する"),
+            w.plot_develop("$akoは翌日から空気として扱われる"),
+            w.plot_develop("授業スケジュールは送られてこず、全てを自力で解決する必要があった"),
+            w.plot_develop("$AIの定期評価ではランク外になる$ako"),
             w.plot_develop("孤立しても平気で生活を続ける$ako"),
-            w.plot_develop("$noriも一緒にハミダシモノになる"),
-            w.plot_turnpoint("次々とハミダシモノになる同級生たち"),
+            w.plot_develop("やがて$AIの評価に怯えない自由な$akoの姿に嫉妬と憧れが集まる"),
+            w.plot_develop("そのうちに$akoになりたいと生徒たちがハミダシモノに参加していく"),
+            w.plot_turnpoint("$AIはハミダシモノが大多数になると、突如ハミダシモノこそが正しい生徒と評価を変えた"),
             )
 
 def ep_AI_result(w: World):
@@ -79,7 +80,8 @@ def ep_AI_result(w: World):
             w.plot_resolve("$misoraがハミダシモノに入れて下さいと懇願する"),
             w.plot_resolve("全員がハミダシモノになった"),
             w.plot_resolve("$akoは責任を取り、学校を辞めた"),
-            w.plot_resolve("$AIの評価では$akoだけが合格と出ていた"),
+            w.plot_resolve("$AI評価は破綻した"),
+            w.plot_resolve("不登校から復帰した$noriを$akoは出迎えた"),
             )
 
 
