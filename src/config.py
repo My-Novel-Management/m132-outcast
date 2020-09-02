@@ -16,6 +16,8 @@ ASSET = {
             # (tag / name / parent / (geometry) / info)
             ("HighSchool", "高校", "Tokyo"),
             ("Classroom", "教室", "HighSchool"),
+            ("Dormitory", "学生寮", "HighSchool"),
+            ("Room", "亜子の部屋", "Dormitory"),
             ),
         "DAYS": (
             # (tag / name / month / day / year)

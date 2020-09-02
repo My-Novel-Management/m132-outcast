@@ -48,8 +48,8 @@ RELEASED = (9, 10, 2020)
 
 
 # Episodes
-def ch_main(w: World):
-    return w.chapter('main',
+def ep_highschool(w: World):
+    return w.episode("先進的学校",
             w.plot_setup("$akoは高校生"),
             w.plot_setup("高校はテストケースの進学校で全寮制、全生徒にタブレットが支給される"),
             w.plot_setup("生徒の評価は$AIにより行われ、先生たちはそれに口出しできない"),
@@ -59,6 +59,10 @@ def ch_main(w: World):
                 "それによってクラスを仕切っていた"),
             w.plot_setup("しかし$akoだけは彼女に従わなかった"),
             w.plot_turnpoint("そして$noriが不登校になった"),
+            )
+
+def ep_hamidashimono(w: World):
+    return w.episode("ハミダシモノ",
             w.plot_develop("クラスでいじめがあるのでは？とタレコミがある"),
             w.plot_develop("問題への対処も$AIによってなされていた"),
             w.plot_develop("$AIによりはじきだされたいじめ対策はクラスに輪番制のハミダシモノを作るということだった"),
@@ -68,10 +72,22 @@ def ch_main(w: World):
             w.plot_develop("孤立しても平気で生活を続ける$ako"),
             w.plot_develop("$noriも一緒にハミダシモノになる"),
             w.plot_turnpoint("次々とハミダシモノになる同級生たち"),
+            )
+
+def ep_AI_result(w: World):
+    return w.episode("AIの評価",
             w.plot_resolve("$misoraがハミダシモノに入れて下さいと懇願する"),
             w.plot_resolve("全員がハミダシモノになった"),
             w.plot_resolve("$akoは責任を取り、学校を辞めた"),
             w.plot_resolve("$AIの評価では$akoだけが合格と出ていた"),
+            )
+
+
+def ch_main(w: World):
+    return w.chapter('main',
+            ep_highschool(w),
+            ep_hamidashimono(w),
+            ep_AI_result(w),
             )
 
 
