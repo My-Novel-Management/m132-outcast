@@ -71,8 +71,8 @@ def ep_hamidashimono(w: World):
             w.plot_develop("$AIの定期評価ではランク外になる$ako"),
             w.plot_develop("孤立しても平気で生活を続ける$ako"),
             w.plot_develop("やがて$AIの評価に怯えない自由な$akoの姿に嫉妬と憧れが集まる"),
-            w.plot_develop("そのうちに$akoになりたいと生徒たちがハミダシモノに参加していく"),
-            w.plot_turnpoint("$AIはハミダシモノが大多数になると、突如ハミダシモノこそが正しい生徒と評価を変えた"),
+            w.plot_develop("けれど誰もハミダシモノの次の番を引き受けようとはしなかった"),
+            w.plot_turnpoint("$AIによる月末の成績評価で、何故かハミダシモノの$akoがトップになる"),
             )
 
 def ep_AI_result(w: World):
