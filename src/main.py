@@ -77,11 +77,13 @@ def ep_hamidashimono(w: World):
 
 def ep_AI_result(w: World):
     return w.episode("AIの評価",
-            w.plot_resolve("$misoraがハミダシモノに入れて下さいと懇願する"),
-            w.plot_resolve("全員がハミダシモノになった"),
-            w.plot_resolve("$akoは責任を取り、学校を辞めた"),
-            w.plot_resolve("$AI評価は破綻した"),
-            w.plot_resolve("不登校から復帰した$noriを$akoは出迎えた"),
+            w.plot_resolve("生徒たちは誰もが文句を言ったが$AI判定は覆らない"),
+            w.plot_resolve("$misoraがハミダシモノに立候補した"),
+            w.plot_resolve("次々と生徒がハミダシモノになり、やがてクラスは崩壊する"),
+            w.plot_resolve("$ako一人だけがハミダシモノではなくなった"),
+            w.plot_resolve("次の月末評価で、今度は$akoだけが成績評価され、ハミダシモノは全員落第の判定が出た"),
+            w.plot_resolve("$ako一人だけがいる教室に、$noriがやってくる"),
+            w.plot_resolve("「みんなは？」という$noriに「ここにいるのがみんなだよ」と$akoは笑って答えた"),
             )
 
 
