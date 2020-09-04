@@ -19,37 +19,79 @@ from config import ASSET
 #
 #   1. Initialize
 #   2. Story memo
-#   3. Structure    - 1/8
+#   3. Structure    - 1/8: 1K
 #   4. Spec
-#   5. Plot         - 1/4
+#   5. Plot         - 1/4: 2K
 #   6. Scenes
-#   7. Conte        - 1/2
+#   7. Conte        - 1/2: 4K
 #   8. Layout
-#   9. Draft        - 1/1
+#   9. Draft        - 1/1: 8K
 #
 ################################################################
 
 # Constant
 TITLE = "ハミダシモノ、はじめました"
-MAJOR, MINOR, MICRO = 0, 2, 0
+MAJOR, MINOR, MICRO = 0, 3, 0
 COPY = "はみだすことは、悪だった"
 ONELINE = "約8000字の青春短編。クラスで「ハミダシモノ」に立候補した少女は翌日から無視される"
 OUTLINE = "クラスでなんとなく空気に馴染めずにいた少女は、中心的存在が募集した「ハミダシモノ」に立候補する。大切な人を守る為、翌日から孤独な戦いが始まった"
 THEME = "はみ出すのはそれほど恐ろしいことなのか？"
 GENRE = "青春／ヒューマンドラマ"
 TARGET = "10-20years"
-SIZE = "規定サイズ"
-CONTEST_INFO = "コンテスト情報"
-CAUTION = "注意事項"
-NOTE = "備考"
+SIZE = "8K"
+CONTEST_INFO = "妄想コンテスト「○○、はじめました」"
+CAUTION = ""
+NOTE = ""
 SITES = ["エブリスタ", "小説家になろう", "ノベルアッププラス", "カクヨム"]
 TAGS = ["ドラマ", "青春", "学生生活", "いじめ"]
-RELEASED = (1, 1, 2020)
+RELEASED = (9, 10, 2020)
 
 
 # Episodes
+def ep_highschool(w: World):
+    return w.episode("先進的学校",
+            w.plot_setup("$akoは高校生"),
+            w.plot_setup("高校はテストケースの進学校で全寮制、全生徒にタブレットが支給される"),
+            w.plot_setup("生徒の評価は$AIにより行われ、誰もそれに口出しできないでいた"),
+            w.plot_setup("$akoは$noriと小学生からの親友"),
+            w.plot_setup("作業が遅く、いつも$AIにより低評価だった$noriはクラスでも見下されていた"),
+            w.plot_setup("成績上位者の一人$misoraはどうやれば$AI評価が高くなるかを理解しており、",
+                "それによってクラスで優位を保っていた"),
+            w.plot_setup("$noriが不登校になる"),
+            w.plot_setup("いじめがあったとタレコミがある"),
+            w.plot_turnpoint("$AIは解決策として輪番制の「ハミダシモノ」を作ることを提案する"),
+            )
+
+def ep_hamidashimono(w: World):
+    return w.episode("ハミダシモノ",
+            w.plot_develop("しかし誰もハミダシモノになりたがらない"),
+            w.plot_develop("$akoはハミダシモノに立候補する"),
+            w.plot_develop("$akoは翌日から空気として扱われる"),
+            w.plot_develop("授業スケジュールは送られてこず、全てを自力で解決する必要があった"),
+            w.plot_develop("$AIの定期評価ではランク外になる$ako"),
+            w.plot_develop("孤立しても平気で生活を続ける$ako"),
+            w.plot_develop("やがて$AIの評価に怯えない自由な$akoの姿に嫉妬と憧れが集まる"),
+            w.plot_develop("けれど誰もハミダシモノの次の番を引き受けようとはしなかった"),
+            w.plot_turnpoint("$AIによる月末の成績評価で、何故かハミダシモノの$akoがトップになる"),
+            )
+
+def ep_AI_result(w: World):
+    return w.episode("AIの評価",
+            w.plot_resolve("生徒たちは誰もが文句を言ったが$AI判定は覆らない"),
+            w.plot_resolve("$misoraがハミダシモノに立候補した"),
+            w.plot_resolve("次々と生徒がハミダシモノになり、やがてクラスは崩壊する"),
+            w.plot_resolve("$ako一人だけがハミダシモノではなくなった"),
+            w.plot_resolve("次の月末評価で、今度は$akoだけが成績評価され、ハミダシモノは全員落第の判定が出た"),
+            w.plot_resolve("$ako一人だけがいる教室に、$noriがやってくる"),
+            w.plot_resolve("「みんなは？」という$noriに「ここにいるのがみんなだよ」と$akoは笑って答えた"),
+            )
+
+
 def ch_main(w: World):
     return w.chapter('main',
+            ep_highschool(w),
+            ep_hamidashimono(w),
+            ep_AI_result(w),
             )
 
 
@@ -110,6 +152,7 @@ def theme_note(w: World):
             "これを放棄することこそが、今回のテーマである",
             "そこから脱却することで、ハミダシモノとなる",
             "そういう反逆の物語",
+            "人間だけでなく、AIによる評価を導入して、そこに対する反逆の物語も描く",
             )
 
 def motif_note(w: World):
@@ -124,6 +167,7 @@ def motif_note(w: World):
             "昼休み", "お弁当",
             "休み時間",
             "体育の時間",
+            "AIによる評価",
             )
 
 # Main
