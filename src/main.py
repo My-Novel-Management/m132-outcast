@@ -51,7 +51,13 @@ RELEASED = (9, 10, 2020)
 def ep_highschool(w: World):
     return w.episode("先進的学校",
             w.plot_setup("$akoは高校生"),
+            w.plot_note("進学校の高等部の特別クラスに選抜された一人の$ako"),
             w.plot_setup("高校はテストケースの進学校で全寮制、全生徒にタブレットが支給される"),
+            w.plot_note("そこではテストケースとして$AIによる成績評価を導入していた"),
+            w.plot_note("生徒の選抜も$AIにより行われたらしい"),
+            w.plot_note("担任の$mizuはきちんとルールを守り、今まで通りに生活すればいいと言う"),
+            w.plot_note("中学一年以来の再会である$noriは、他の生徒から邪険に扱われていた"),
+            # TODO
             w.plot_setup("生徒の評価は$AIにより行われ、誰もそれに口出しできないでいた"),
             w.plot_setup("$akoは$noriと小学生からの親友"),
             w.plot_setup("作業が遅く、いつも$AIにより低評価だった$noriはクラスでも見下されていた"),
@@ -78,12 +84,26 @@ def ep_hamidashimono(w: World):
 def ep_AI_result(w: World):
     return w.episode("AIの評価",
             w.plot_resolve("生徒たちは誰もが文句を言ったが$AI判定は覆らない"),
+            w.plot_note("$AIによる前期の中間判定が出されたことに対して生徒たちはみな文句を言った"),
+            w.plot_note("担任の$mizuもおかしいと思って抗議をしたが、$AIによる判定に従うこととしか言われない"),
+            w.plot_note("生徒たちは$akoに対して嫉妬の嵐で、彼女を潰そうと実力行使に出ていた"),
+            w.plot_note("しかし校則違反をした者として処罰され、退学処分になっていく"),
             w.plot_resolve("$misoraがハミダシモノに立候補した"),
+            w.plot_note("そんな中で$misoraはハミダシモノに立候補する"),
+            w.plot_note("ハミダシモノになった$misoraは評価が上がる"),
             w.plot_resolve("次々と生徒がハミダシモノになり、やがてクラスは崩壊する"),
+            w.plot_note("生徒たちは次々とハミダシモノになり、クラスには「まともな生徒」が不在になる"),
             w.plot_resolve("$ako一人だけがハミダシモノではなくなった"),
+            w.plot_note("$akoはハミダシモノをやめる"),
+            w.plot_note("$akoだけが「正常な生徒」となった"),
             w.plot_resolve("次の月末評価で、今度は$akoだけが成績評価され、ハミダシモノは全員落第の判定が出た"),
+            w.plot_note("前期の最後の評価、再び$akoだけが評価され、ハミダシモノとなった他の生徒は落第の判定が出た"),
+            w.plot_note("全員に退学処分が課せられ、そのうえ責任を取って担任はくびになる"),
             w.plot_resolve("$ako一人だけがいる教室に、$noriがやってくる"),
+            w.plot_note("教室には$akoだけがいた"),
             w.plot_resolve("「みんなは？」という$noriに「ここにいるのがみんなだよ」と$akoは笑って答えた"),
+            w.plot_note("ドアが開き、新しい生徒が入ってきたと思ったら復帰した$noriだった"),
+            w.plot_note("彼女は「みんなは？」と尋ねたが$akoは「今ここにいるのが全生徒だよ」と笑った"),
             )
 
 
