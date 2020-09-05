@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.0] - 2020-09-04
+### Added
+- spec
+
 ## [0.3.0] - 2020-09-03
 ### Added
 - struct
@@ -23,7 +27,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
 - README one line implemented.
 
-[Unreleased]: https://github.com/My-Novel-Management/m132-outcast/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/My-Novel-Management/m132-outcast/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/My-Novel-Management/m132-outcast/releases/v0.4.0
 [0.3.0]: https://github.com/My-Novel-Management/m132-outcast/releases/v0.3.0
 [0.2.0]: https://github.com/My-Novel-Management/m132-outcast/releases/v0.2.0
 [0.1.0]: https://github.com/My-Novel-Management/m132-outcast/releases/v0.1.0
