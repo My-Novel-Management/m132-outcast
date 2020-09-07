@@ -12,7 +12,18 @@ from storybuilder.assets import basic
 from storybuilder.assets import common_rubi
 from config import ASSET
 # import scenes
-# from scenes import xxx
+from scenes import Cafeteria
+from scenes import Classroom
+from scenes import Corridor
+from scenes import Dormitory
+from scenes import Gate
+from scenes import Ground
+from scenes import Gymnasium
+from scenes import HighSchool
+from scenes import Library
+from scenes import PCRoom
+from scenes import Room
+from scenes import Toilet
 
 
 ################################################################
@@ -51,58 +62,62 @@ RELEASED = (9, 10, 2020)
 def ep_highschool(w: World):
     return w.episode("先進的学校",
             w.plot_setup("$akoは高校生"),
-            "ゲート：チェックゲートを通過する生徒たち",
+            Gate.checking(w),
             w.plot_setup("高校はテストケースの進学校で全寮制、全生徒にタブレットが支給される"),
+            Classroom.this_rule(w),
             w.plot_setup("$akoと$noriは中学一年以来の知人"),
-            "体育館：二人が中学一年以来の再会と示す",
+            Gymnasium.old_friend(w),
             w.plot_setup("生徒の評価は$AIにより行われ、誰もそれに口出しできないでいた"),
-            "教室：評価場面",
+            Classroom.evaluation(w),
             w.plot_setup("$noriが不登校になる"),
-            "教室：不登校",
+            Classroom.refusal(w),
             w.plot_setup("いじめがあったとタレコミがある"),
+            Classroom.tips(w),
             w.plot_turnpoint("$AIは解決策として輪番制の「ハミダシモノ」を作ることを提案する"),
-            "教室：$AIの提案",
+            Classroom.AIs_suggestion(w),
             )
 
 def ep_hamidashimono(w: World):
     return w.episode("ハミダシモノ",
             w.plot_develop("しかし誰もハミダシモノになりたがらない"),
-            "教室：学級会議",
+            Classroom.meeting(w),
             w.plot_develop("$akoはハミダシモノに立候補する"),
-            "教室：立候補",
+            Classroom.outcast(w),
             w.plot_develop("$akoは翌日から空気として扱われる"),
-            "ゲート：ハミダシモノになった",
-            "教室：ハミダシモノ状況",
+            Gate.outcast_morning(w),
+            Classroom.outcast_status1(w),
             w.plot_develop("授業スケジュールは送られてこず、全てを自力で解決する必要があった"),
-            "図書室",
-            "PC室：入室不可",
-            "教室：一人で授業",
-            "食堂：食券も使えず購入不可。自分で弁当を作る",
-            "グラウンド：一人で走る",
+            Library.nothing_right2(w),
+            PCRoom.nothing_right(w),
+            Classroom.alone_class(w),
+            Cafeteria.nothing_right(w),
+            Ground.alone_run(w),
             w.plot_develop("$AIの定期評価ではランク外になる$ako"),
-            "教室：定期評価",
+            Classroom.regular_evaluation(w),
             w.plot_develop("孤立しても平気で生活を続ける$ako"),
-            "教室：孤立",
+            Classroom.free_alone(w),
             w.plot_develop("やがて$AIの評価に怯えない自由な$akoの姿に嫉妬と憧れが集まる"),
-            "教室：嫉妬",
+            Classroom.jealousy(w),
             w.plot_develop("けれど誰もハミダシモノの次の番を引き受けようとはしなかった"),
+            Classroom.continued(w),
             w.plot_turnpoint("$AIによる月末の成績評価で、何故かハミダシモノの$akoがトップになる"),
-            "教室：成績評価の逆転",
+            Classroom.reversal(w),
             )
 
 def ep_AI_result(w: World):
     return w.episode("AIの評価",
             w.plot_resolve("生徒たちは誰もが文句を言ったが$AI判定は覆らない"),
-            "教室：抗議",
+            Classroom.protest(w),
             w.plot_resolve("$misoraがハミダシモノに立候補した"),
-            "教室：$misoraの立候補",
+            Classroom.new_outcast(w),
             w.plot_resolve("次々と生徒がハミダシモノになり、やがてクラスは崩壊する"),
             w.plot_resolve("$ako一人だけがハミダシモノではなくなった"),
-            "教室：脱ハミダシモノ",
+            Classroom.alone_regular(w),
             w.plot_resolve("次の月末評価で、今度は$akoだけが成績評価され、ハミダシモノは全員落第の判定が出た"),
+            Classroom.dropout_outcasts(w),
             w.plot_resolve("$ako一人だけがいる教室に、$noriがやってくる"),
-            "教室：一人",
             w.plot_resolve("「みんなは？」という$noriに「ここにいるのがみんなだよ」と$akoは笑って答えた"),
+            Classroom.new_class(w),
             )
 
 
