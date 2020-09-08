@@ -11,6 +11,7 @@ from storybuilder.builder.world import World
 
 ## scenes
 def alone_run(w: World):
+    ako = w.get("ako")
     return w.scene('孤独な走行',
             w.cmd.change_stage("Ground"),
             w.plot_note("体育は参加することもできず、一人で外を走っているだけ"),

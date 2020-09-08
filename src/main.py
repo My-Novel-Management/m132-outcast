@@ -42,7 +42,7 @@ from scenes import Toilet
 
 # Constant
 TITLE = "ハミダシモノ、はじめました"
-MAJOR, MINOR, MICRO = 0, 6, 0
+MAJOR, MINOR, MICRO = 0, 7, 0
 COPY = "はみだすことは、悪だった"
 ONELINE = "約8000字の青春短編。クラスで「ハミダシモノ」に立候補した少女は翌日から無視される"
 OUTLINE = "クラスでなんとなく空気に馴染めずにいた少女は、中心的存在が募集した「ハミダシモノ」に立候補する。大切な人を守る為、翌日から孤独な戦いが始まった"
@@ -66,7 +66,7 @@ def ep_highschool(w: World):
             w.plot_setup("高校はテストケースの進学校で全寮制、全生徒にタブレットが支給される"),
             Classroom.this_rule(w),
             w.plot_setup("$akoと$noriは中学一年以来の知人"),
-            Gymnasium.old_friend(w),
+            Gymnasium.old_friend(w).omit(),
             w.plot_setup("生徒の評価は$AIにより行われ、誰もそれに口出しできないでいた"),
             Classroom.evaluation(w),
             w.plot_setup("$noriが不登校になる"),

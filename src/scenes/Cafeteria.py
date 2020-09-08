@@ -11,6 +11,7 @@ from storybuilder.builder.world import World
 
 ## scenes
 def nothing_right(w: World):
+    ako = w.get("ako")
     return w.scene('権利がない',
             w.cmd.change_stage("Cafeteria"),
             w.plot_note("食券も配られずに自腹"),
