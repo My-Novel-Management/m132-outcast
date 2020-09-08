@@ -12,7 +12,18 @@ from storybuilder.assets import basic
 from storybuilder.assets import common_rubi
 from config import ASSET
 # import scenes
-# from scenes import xxx
+from scenes import Cafeteria
+from scenes import Classroom
+from scenes import Corridor
+from scenes import Dormitory
+from scenes import Gate
+from scenes import Ground
+from scenes import Gymnasium
+from scenes import HighSchool
+from scenes import Library
+from scenes import PCRoom
+from scenes import Room
+from scenes import Toilet
 
 
 ################################################################
@@ -31,7 +42,7 @@ from config import ASSET
 
 # Constant
 TITLE = "ハミダシモノ、はじめました"
-MAJOR, MINOR, MICRO = 0, 5, 0
+MAJOR, MINOR, MICRO = 0, 6, 0
 COPY = "はみだすことは、悪だった"
 ONELINE = "約8000字の青春短編。クラスで「ハミダシモノ」に立候補した少女は翌日から無視される"
 OUTLINE = "クラスでなんとなく空気に馴染めずにいた少女は、中心的存在が募集した「ハミダシモノ」に立候補する。大切な人を守る為、翌日から孤独な戦いが始まった"
@@ -51,92 +62,62 @@ RELEASED = (9, 10, 2020)
 def ep_highschool(w: World):
     return w.episode("先進的学校",
             w.plot_setup("$akoは高校生"),
-            w.plot_note("進学校の高等部の特別クラスに選抜された一人の$ako"),
+            Gate.checking(w),
             w.plot_setup("高校はテストケースの進学校で全寮制、全生徒にタブレットが支給される"),
-            w.plot_note("そこではテストケースとして$AIによる成績評価を導入していた"),
-            w.plot_note("生徒の選抜も$AIにより行われたらしい"),
-            w.plot_note("担任の$mizuはきちんとルールを守り、今まで通りに生活すればいいと言う"),
+            Classroom.this_rule(w),
             w.plot_setup("$akoと$noriは中学一年以来の知人"),
-            w.plot_note("中学一年以来の再会である$noriは、他の生徒から邪険に扱われていた"),
+            Gymnasium.old_friend(w),
             w.plot_setup("生徒の評価は$AIにより行われ、誰もそれに口出しできないでいた"),
-            w.plot_note("最初のテスト後に$AIの成績評価が出された"),
-            w.plot_note("それはテストだけでなく、普段の生活でのポイントも加味されている"),
-            w.plot_note("委員長に選出された$misoraがトップだった"),
-            w.plot_note("しかし何もやってないはずの$noriが次点で、そこから彼女へのいじめが始まる"),
+            Classroom.evaluation(w),
             w.plot_setup("$noriが不登校になる"),
-            w.plot_note("やがて精神バランスを壊して$noriは入院という名の不登校になった"),
+            Classroom.refusal(w),
             w.plot_setup("いじめがあったとタレコミがある"),
-            w.plot_note("ある日$mizuから$AIに「クラスでいじめがあった」と報告が入っていたと言われる"),
-            w.plot_note("個人個人の端末から$AIに通報することが簡単にできた"),
-            w.plot_note("個人情報は秘匿され、担任の$mizuも誰が言ったのか分からないという"),
-            w.plot_note("クラス会議で確認したが、いじめの事実はなかった"),
-            w.plot_note("$mizuはそう伝えると言った"),
+            Classroom.tips(w),
             w.plot_turnpoint("$AIは解決策として輪番制の「ハミダシモノ」を作ることを提案する"),
-            w.plot_note("しかし翌日、$AIが出した結論はいじめはなくならないから輪番制で「ハミダシモノ」を作ろうという提案だった"),
+            Classroom.AIs_suggestion(w),
             )
 
 def ep_hamidashimono(w: World):
     return w.episode("ハミダシモノ",
             w.plot_develop("しかし誰もハミダシモノになりたがらない"),
-            w.plot_note("すぐに学級会議がもたれた"),
-            w.plot_note("誰もハミダシモノに立候補しない"),
-            w.plot_note("投票でハミダシモノを選ぼうという話になるが「生徒の自主性を大切にする」という項目の評価点が下がると$misoraが指摘する"),
-            w.plot_note("そこから立候補が出るまで問題は据え置きにされる"),
+            Classroom.meeting(w),
             w.plot_develop("$akoはハミダシモノに立候補する"),
-            w.plot_note("その週末、ハミダシモノ立候補の締切がやってくる"),
-            w.plot_note("$akoは会議の冒頭でハミダシモノに立候補し、そのまま彼女が最初のハミダシモノに決定した"),
+            Classroom.outcast(w),
             w.plot_develop("$akoは翌日から空気として扱われる"),
-            w.plot_note("ハミダシモノになるとクラスグループから外される"),
-            w.plot_note("授業スケジュールが届かず、宿題も教えてもらえない"),
-            w.plot_note("食券も配られずに自腹"),
-            w.plot_note("図書館の利用もできなくなった"),
-            w.plot_note("パソコンルームにも入れなくなる（正規の生徒でないと入室不可能）"),
+            Gate.outcast_morning(w),
+            Classroom.outcast_status1(w),
             w.plot_develop("授業スケジュールは送られてこず、全てを自力で解決する必要があった"),
-            w.plot_note("$akoは別室での授業の時にも一人で教室に残り、自分で参考書を開く"),
-            w.plot_note("完全に自立して学校の勉強をするようになった"),
-            w.plot_note("食事は自分で作った弁当を持参する"),
-            w.plot_note("体育は参加することもできず、一人で外を走っているだけ"),
+            Library.nothing_right2(w),
+            PCRoom.nothing_right(w),
+            Classroom.alone_class(w),
+            Cafeteria.nothing_right(w),
+            Ground.alone_run(w),
             w.plot_develop("$AIの定期評価ではランク外になる$ako"),
-            w.plot_note("月始めに前月の成績が発表される"),
-            w.plot_note("$akoの名前は「ランク外」という特別項目に記載されていた"),
-            w.plot_note("評価点が得られないと前期終了後に退学勧告がなされると書かれている"),
+            Classroom.regular_evaluation(w),
             w.plot_develop("孤立しても平気で生活を続ける$ako"),
-            w.plot_note("しかしそんな状況下にあっても$akoは平気で暮らしていた"),
-            w.plot_note("むしろ自由に自分で計画が立てられ、教科書も早くに勉強を終えてしまえる"),
-            w.plot_note("授業には参加していたが、決して当てられることもないので、常に参考書や小説を読んでいた"),
+            Classroom.free_alone(w),
             w.plot_develop("やがて$AIの評価に怯えない自由な$akoの姿に嫉妬と憧れが集まる"),
-            w.plot_note("そんな$akoの姿に一部からは嫉妬や憧れが出てくる"),
-            w.plot_note("クラスグループのチャット欄には成績評価さえなければ自分もハミダシモノになると言い出す者も"),
+            Classroom.jealousy(w),
             w.plot_develop("けれど誰もハミダシモノの次の番を引き受けようとはしなかった"),
-            w.plot_note("輪番制だったハミダシモノだが、次のハミダシモノを決める時にも誰も立候補せず"),
-            w.plot_note("そのまま$akoが続けてハミダシモノとなることが決定した"),
+            Classroom.continued(w),
             w.plot_turnpoint("$AIによる月末の成績評価で、何故かハミダシモノの$akoがトップになる"),
-            w.plot_note("しかし翌月の評価では何故かハミダシモノのはずの$akoがトップとなっていた"),
+            Classroom.reversal(w),
             )
 
 def ep_AI_result(w: World):
     return w.episode("AIの評価",
             w.plot_resolve("生徒たちは誰もが文句を言ったが$AI判定は覆らない"),
-            w.plot_note("$AIによる前期の中間判定が出されたことに対して生徒たちはみな文句を言った"),
-            w.plot_note("担任の$mizuもおかしいと思って抗議をしたが、$AIによる判定に従うこととしか言われない"),
-            w.plot_note("生徒たちは$akoに対して嫉妬の嵐で、彼女を潰そうと実力行使に出ていた"),
-            w.plot_note("しかし校則違反をした者として処罰され、退学処分になっていく"),
+            Classroom.protest(w),
             w.plot_resolve("$misoraがハミダシモノに立候補した"),
-            w.plot_note("そんな中で$misoraはハミダシモノに立候補する"),
-            w.plot_note("ハミダシモノになった$misoraは評価が上がる"),
+            Classroom.new_outcast(w),
             w.plot_resolve("次々と生徒がハミダシモノになり、やがてクラスは崩壊する"),
-            w.plot_note("生徒たちは次々とハミダシモノになり、クラスには「まともな生徒」が不在になる"),
             w.plot_resolve("$ako一人だけがハミダシモノではなくなった"),
-            w.plot_note("$akoはハミダシモノをやめる"),
-            w.plot_note("$akoだけが「正常な生徒」となった"),
+            Classroom.alone_regular(w),
             w.plot_resolve("次の月末評価で、今度は$akoだけが成績評価され、ハミダシモノは全員落第の判定が出た"),
-            w.plot_note("前期の最後の評価、再び$akoだけが評価され、ハミダシモノとなった他の生徒は落第の判定が出た"),
-            w.plot_note("全員に退学処分が課せられ、そのうえ責任を取って担任はくびになる"),
+            Classroom.dropout_outcasts(w),
             w.plot_resolve("$ako一人だけがいる教室に、$noriがやってくる"),
-            w.plot_note("教室には$akoだけがいた"),
             w.plot_resolve("「みんなは？」という$noriに「ここにいるのがみんなだよ」と$akoは笑って答えた"),
-            w.plot_note("ドアが開き、新しい生徒が入ってきたと思ったら復帰した$noriだった"),
-            w.plot_note("彼女は「みんなは？」と尋ねたが$akoは「今ここにいるのが全生徒だよ」と笑った"),
+            Classroom.new_class(w),
             )
 
 
