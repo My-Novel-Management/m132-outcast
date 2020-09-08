@@ -32,6 +32,9 @@ def checking(w: World):
 
 
 def outcast_morning(w: World):
+    ako, misora = w.get("ako"), w.get("misora")
     return w.scene("ハミダシモノの朝",
+            w.cmd.change_stage("Gate"),
             w.plot_note("ハミダシモノになるとクラスグループから外される"),
+            # TODO
             )
