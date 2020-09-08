@@ -10,7 +10,4 @@ from storybuilder.builder.world import World
 
 
 ## scenes
-def scene_name(w: World):
-    return w.scene('__scene__',
-            outline="description")
 

@@ -42,6 +42,7 @@ ASSET = {
             ("AI", "ＡＩ"),
             ("SNS", "ＳＮＳ"),
             ("LINE", "ＬＩＮＥ"),
+            ("siva", "シヴァ"),
             ),
         "RUBIS": (
             # (origin / rubi / exclusions / always)

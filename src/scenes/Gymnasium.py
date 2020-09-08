@@ -12,6 +12,7 @@ from storybuilder.builder.world import World
 ## scenes
 def old_friend(w: World):
     return w.scene('旧友との再会',
+            w.cmd.change_stage("Gymnasium"),
             w.plot_note("中学一年以来の再会である$noriは、他の生徒から邪険に扱われていた"),
             )
 
