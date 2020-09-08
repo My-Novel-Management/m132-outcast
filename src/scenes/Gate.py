@@ -33,8 +33,24 @@ def checking(w: World):
 
 def outcast_morning(w: World):
     ako, misora = w.get("ako"), w.get("misora")
+    mizu = w.get("mizu")
     return w.scene("ハミダシモノの朝",
             w.cmd.change_stage("Gate"),
             w.plot_note("ハミダシモノになるとクラスグループから外される"),
-            # TODO
+            ako.come("翌朝、チェックゲートにやってくる"),
+            ako.do("噂は他のクラスにも広まり、遠巻きに$Sのことを見ている"),
+            ako.do("ゲートを潜ろうとして端末を翳したが、反応がない"),
+            ako.do("$Sはゲートを潜ることすら許されない"),
+            ako.do("担当の$mizuを見る"),
+            mizu.do("よく状況が理解できていないよう"),
+            mizu.talk("後ろがつかえてるから早くしなさい"),
+            ako.do("少し考えて、端末を通さずにそのまま通ろうとする"),
+            ako.do("ゲートが閉じたまま開かない"),
+            ako.talk("故障しているみたいです"),
+            mizu.talk("え？　そんなことはないと思うけど"),
+            ako.do("$Sを横にどかして他の生徒を通してみると、通れるしチェックも行える"),
+            ako.talk("壊れたのはこちらのようですね"),
+            ako.do("$Sは端末を見せるが、$mizuは困ったまま"),
+            ako.do("少し考えて、端末を確認する"),
+            ako.do("ゲート通過の許可という項目がエラーになっていた"),
             )
