@@ -99,7 +99,8 @@ def ep_hamidashimono(w: World):
             w.plot_develop("やがて$AIの評価に怯えない自由な$akoの姿に嫉妬と憧れが集まる"),
             Classroom.jealousy(w),
             w.plot_develop("けれど誰もハミダシモノの次の番を引き受けようとはしなかった"),
-            Classroom.continued(w),
+            Classroom.continued(w).omit(),
+            Toilet.nori_thought(w),
             w.plot_turnpoint("$AIによる月末の成績評価で、何故かハミダシモノの$akoがトップになる"),
             Classroom.reversal(w),
             )
