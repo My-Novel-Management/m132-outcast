@@ -10,7 +10,8 @@ ASSET = {
             ("ako", "亜子", "沢井,亜子", 16,(1,1), "female", "高校生", "me:あたし"),
             ("misora", "美空", "和木,美空", 16,(1,1), "female", "高校生", "me:わたし"),
             ("mizu", "水口", "", 37,(1,1), "male", "教師", "me:私"),
-            ("nori", "典子", "相良,典子", 16,(1,1), "female", "高校生", "me:私"),
+            ("nori", "典子", "相良,典子", 16,(1,1), "female", "高校生", "me:私:k_ako:沢井さん"),
+            ("noza", "佳苗", "野崎,佳苗", 16,(1,1), "female", "高校生", "me:ワタシ"),
             ),
         "STAGES": (
             # (tag / name / parent / (geometry) / info)
@@ -42,6 +43,8 @@ ASSET = {
             ("AI", "ＡＩ"),
             ("SNS", "ＳＮＳ"),
             ("LINE", "ＬＩＮＥ"),
+            ("siva", "ＳＩＢＡ"), # System of Intelligence Brain for Assessment
+            ("HR", "ＨＲ"),
             ),
         "RUBIS": (
             # (origin / rubi / exclusions / always)
