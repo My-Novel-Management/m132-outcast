@@ -42,7 +42,7 @@ from scenes import Toilet
 
 # Constant
 TITLE = "ハミダシモノ、はじめました"
-MAJOR, MINOR, MICRO = 0, 7, 0
+MAJOR, MINOR, MICRO = 0, 8, 0
 COPY = "はみだすことは、悪だった"
 ONELINE = "約8000字の青春短編。クラスで「ハミダシモノ」に立候補した少女は翌日から無視される"
 OUTLINE = "クラスでなんとなく空気に馴染めずにいた少女は、中心的存在が募集した「ハミダシモノ」に立候補する。大切な人を守る為、翌日から孤独な戦いが始まった"
@@ -70,6 +70,7 @@ def ep_highschool(w: World):
             w.plot_setup("生徒の評価は$AIにより行われ、誰もそれに口出しできないでいた"),
             Classroom.evaluation(w),
             w.plot_setup("$noriが不登校になる"),
+            Gymnasium.bullying(w),
             Classroom.refusal(w),
             w.plot_setup("いじめがあったとタレコミがある"),
             Classroom.tips(w),
@@ -90,8 +91,8 @@ def ep_hamidashimono(w: World):
             Library.nothing_right2(w).omit(),
             PCRoom.nothing_right(w).omit(),
             Classroom.alone_class(w),
-            Cafeteria.nothing_right(w),
-            Ground.alone_run(w),
+            Cafeteria.nothing_right(w).omit(),
+            Ground.alone_run(w).omit(),
             w.plot_develop("$AIの定期評価ではランク外になる$ako"),
             Classroom.regular_evaluation(w),
             w.plot_develop("孤立しても平気で生活を続ける$ako"),
@@ -100,7 +101,12 @@ def ep_hamidashimono(w: World):
             Classroom.jealousy(w),
             w.plot_develop("けれど誰もハミダシモノの次の番を引き受けようとはしなかった"),
             Classroom.continued(w).omit(),
-            Toilet.nori_thought(w),
+            Toilet.nori_thought(w).omit(),
+            w.plot_develop("一方、そんな中、夏休みに入る",
+                "$akoは$noriとメッセージでやり取りを続けていた"),
+            w.plot_turnpoint("そこに$sivaからメッセージが届いた"),
+            Dormitory.backto_domitory(w),
+            Room.mystery_message(w),
             w.plot_turnpoint("$AIによる月末の成績評価で、何故かハミダシモノの$akoがトップになる"),
             Classroom.reversal(w),
             )
@@ -262,6 +268,12 @@ def motif_note(w: World):
             "AIによる評価",
             )
 
+def materials(w: World):
+    return w.writer_note("素材",
+            "２学期制について",
+            "前期後期にする。学校によりいろいろ違っているが、十月初旬までを前期、十月中旬からを後期とする。秋休みが作れる（九月の連休にかませる）",
+            )
+
 # Main
 def main(): # pragma: no cover
     w = World.create_world(f"{TITLE}")
@@ -291,6 +303,7 @@ def main(): # pragma: no cover
             stage_note(w),
             theme_note(w),
             motif_note(w),
+            materials(w),
             ch_main(w),
             )
 

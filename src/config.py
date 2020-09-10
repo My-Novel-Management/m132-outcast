@@ -30,6 +30,21 @@ ASSET = {
             ),
         "DAYS": (
             # (tag / name / month / day / year)
+            ("FirstTime", "はじめの日", 5,11, 2020),
+            ("BullyDay", "いじめの日", 5,12, 2020),
+            ("Refusal", "$noriの不登校開始日", 5,25, 2020),
+            ("SuggestAI", "提案日", 6,2, 2020),
+            ("SuggestMeeting", "提案会議", 6,3, 2020),
+            ("SuggestLimit", "提案締切日", 6,5, 2020),
+            ("HamidashiDay1", "ハミダシモノの初日", 6,8, 2020),
+            ("EvalTimeJune", "六月の成績評価", 7,1, 2020),
+            ("HamidashiDay2", "ハミダシモノの日常", 7,10, 2020),
+            ("BeforeSummerDay", "夏休み前", 7,22, 2020),
+            ("AfterSummerDay", "夏休み開けた日", 8,25, 2020),
+            ("MisoraHamidashi", "美空がハミダシモノに立候補", 9,1, 2020),
+            ("OutHamidashi", "ハミダシモノを辞めた日", 9,11, 2020),
+            ("Withdrawal", "ハミダシモノたちの退学", 10,9, 2020),
+            ("NewTerm", "新学期", 10,19, 2020),
             ),
         "TIMES": (
             # (tag / name / hour / minute)
