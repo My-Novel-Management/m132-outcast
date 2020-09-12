@@ -72,14 +72,14 @@ def ep_highschool(w: World):
             w.plot_setup("$noriが不登校になる"),
             Gymnasium.bullying(w),
             Classroom.refusal(w),
-            w.plot_setup("いじめがあったとタレコミがある"),
-            Classroom.tips(w),
-            w.plot_turnpoint("$AIは解決策として輪番制の「ハミダシモノ」を作ることを提案する"),
-            Classroom.AIs_suggestion(w),
             )
 
 def ep_hamidashimono(w: World):
     return w.episode("ハミダシモノ",
+            w.plot_setup("いじめがあったとタレコミがある"),
+            Classroom.tips(w),
+            w.plot_turnpoint("$AIは解決策として輪番制の「ハミダシモノ」を作ることを提案する"),
+            Classroom.AIs_suggestion(w),
             w.plot_develop("しかし誰もハミダシモノになりたがらない"),
             Classroom.meeting(w),
             w.plot_develop("$akoはハミダシモノに立候補する"),

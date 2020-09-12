@@ -59,6 +59,8 @@ ASSET = {
             ("SNS", "ＳＮＳ"),
             ("LINE", "ＬＩＮＥ"),
             ("siva", "ＳＩＢＡ"), # System of Intelligence Brain for Assessment
+            ("full_siva", "System of Intelligence Brain for Assesment"),
+            ("jpn_siva", "評価のための人工頭脳システム"),
             ("HR", "ＨＲ"),
             ),
         "RUBIS": (
