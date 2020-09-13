@@ -42,7 +42,7 @@ from scenes import Toilet
 
 # Constant
 TITLE = "ハミダシモノ、はじめました"
-MAJOR, MINOR, MICRO = 0, 8, 0
+MAJOR, MINOR, MICRO = 0, 9, 0
 COPY = "はみだすことは、悪だった"
 ONELINE = "約8000字の青春短編。クラスで「ハミダシモノ」に立候補した少女は翌日から無視される"
 OUTLINE = "クラスでなんとなく空気に馴染めずにいた少女は、中心的存在が募集した「ハミダシモノ」に立候補する。大切な人を守る為、翌日から孤独な戦いが始まった"
@@ -70,23 +70,23 @@ def ep_highschool(w: World):
             w.plot_setup("生徒の評価は$AIにより行われ、誰もそれに口出しできないでいた"),
             Classroom.evaluation(w),
             w.plot_setup("$noriが不登校になる"),
-            Gymnasium.bullying(w),
+            Gymnasium.bullying(w).omit(),
             Classroom.refusal(w),
-            w.plot_setup("いじめがあったとタレコミがある"),
-            Classroom.tips(w),
-            w.plot_turnpoint("$AIは解決策として輪番制の「ハミダシモノ」を作ることを提案する"),
-            Classroom.AIs_suggestion(w),
             )
 
 def ep_hamidashimono(w: World):
     return w.episode("ハミダシモノ",
+            w.plot_setup("いじめがあったとタレコミがある"),
+            Classroom.tips(w).omit(),
+            w.plot_turnpoint("$AIは解決策として輪番制の「ハミダシモノ」を作ることを提案する"),
+            Classroom.AIs_suggestion(w).omit(),
             w.plot_develop("しかし誰もハミダシモノになりたがらない"),
-            Classroom.meeting(w),
+            Classroom.meeting(w).omit(),
             w.plot_develop("$akoはハミダシモノに立候補する"),
             Classroom.outcast(w),
             w.plot_develop("$akoは翌日から空気として扱われる"),
-            Gate.outcast_morning(w),
-            Classroom.outcast_status1(w),
+            Gate.outcast_morning(w).omit(),
+            Classroom.outcast_status1(w).omit(),
             w.plot_develop("授業スケジュールは送られてこず、全てを自力で解決する必要があった"),
             Library.nothing_right2(w).omit(),
             PCRoom.nothing_right(w).omit(),
@@ -94,11 +94,11 @@ def ep_hamidashimono(w: World):
             Cafeteria.nothing_right(w).omit(),
             Ground.alone_run(w).omit(),
             w.plot_develop("$AIの定期評価ではランク外になる$ako"),
-            Classroom.regular_evaluation(w),
+            Classroom.regular_evaluation(w).omit(),
             w.plot_develop("孤立しても平気で生活を続ける$ako"),
-            Classroom.free_alone(w),
+            Classroom.free_alone(w).omit(),
             w.plot_develop("やがて$AIの評価に怯えない自由な$akoの姿に嫉妬と憧れが集まる"),
-            Classroom.jealousy(w),
+            Classroom.jealousy(w).omit(),
             w.plot_develop("けれど誰もハミダシモノの次の番を引き受けようとはしなかった"),
             Classroom.continued(w).omit(),
             Toilet.nori_thought(w).omit(),
@@ -133,6 +133,7 @@ def ch_main(w: World):
             ep_highschool(w),
             ep_hamidashimono(w),
             ep_AI_result(w),
+            w.symbol("（了）"),
             )
 
 
